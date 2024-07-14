@@ -1,0 +1,343 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scrapall Results</title>
+    
+    
+
+</head>
+<body>
+    <div class="modal">
+        <article class="modal-container">
+            <header class="modal-container-header">
+                <span class="modal-container-title">
+                    <svg aria-hidden="true" height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M14 9V4H5v16h6.056c.328.417.724.785 1.18 1.085l1.39.915H3.993A.993.993 0 0 1 3 21.008V2.992C3 2.455 3.449 2 4.002 2h10.995L21 8v1h-7zm-2 2h9v5.949c0 .99-.501 1.916-1.336 2.465L16.5 21.498l-3.164-2.084A2.953 2.953 0 0 1 12 16.95V11zm2 5.949c0 .316.162.614.436.795l2.064 1.36 2.064-1.36a.954.954 0 0 0 .436-.795V13h-5v3.949z" fill="currentColor"></path>
+                    </svg>
+                    SCRAPPER TEXTS
+                </span>
+                <button class="icon-button">
+                    <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z" fill="currentColor"></path>
+                    </svg>
+                </button>
+            </header>
+            <section class="modal-container-body rtf">
+                <p>{{ content|safe }}</p>
+            </section>
+            <footer class="modal-container-footer">
+                <button1 id="showLinksButton" data-toggle="modal" data-target="#linksModal">
+                    Links
+                </button1>
+            </footer>
+        </article>
+    </div>
+    <div class="modal">
+        <article class="modal-container">
+            <header class="modal-container-header">
+                <span class="modal-container-title">
+                    <svg aria-hidden="true" height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M14 9V4H5v16h6.056c.328.417.724.785 1.18 1.085l1.39.915H3.993A.993.993 0 0 1 3 21.008V2.992C3 2.455 3.449 2 4.002 2h10.995L21 8v1h-7zm-2 2h9v5.949c0 .99-.501 1.916-1.336 2.465L16.5 21.498l-3.164-2.084A2.953 2.953 0 0 1 12 16.95V11zm2 5.949c0 .316.162.614.436.795l2.064 1.36 2.064-1.36a.954.954 0 0 0 .436-.795V13h-5v3.949z" fill="currentColor"></path>
+                    </svg>
+                    SCRAPPER LINKS
+                </span>
+                <button class="icon-button">
+                    <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z" fill="currentColor"></path>
+                    </svg>
+                </button>
+            </header>
+            <section class="modal-container-body rtf">
+                {% for link in links %}
+                        <li><a href="{{ link }}" target="_blank">{{ link }}</a></li>
+                {% endfor %}
+            </section>
+            <footer class="modal-container-footer">
+                <button1 id="showLinksButton" data-toggle="modal" data-target="#linksModal">
+                    Links
+                </button1>
+            </footer>
+        </article>
+    </div>
+    <div class="modal">
+        <article class="modal-container">
+            <header class="modal-container-header">
+                <span class="modal-container-title">
+                    <svg aria-hidden="true" height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M14 9V4H5v16h6.056c.328.417.724.785 1.18 1.085l1.39.915H3.993A.993.993 0 0 1 3 21.008V2.992C3 2.455 3.449 2 4.002 2h10.995L21 8v1h-7zm-2 2h9v5.949c0 .99-.501 1.916-1.336 2.465L16.5 21.498l-3.164-2.084A2.953 2.953 0 0 1 12 16.95V11zm2 5.949c0 .316.162.614.436.795l2.064 1.36 2.064-1.36a.954.954 0 0 0 .436-.795V13h-5v3.949z" fill="currentColor"></path>
+                    </svg>
+                    SCRAPPER MEDIAS
+                </span>
+                <button class="icon-button">
+                    <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z" fill="currentColor"></path>
+                    </svg>
+                </button>
+            </header>
+            <section class="modal-container-body rtf">
+                <ul>
+                    {% for img_src in media %}
+                        <li><img src="{{ img_src }}" alt="Media" ></li>
+                    {% endfor %}
+                </ul>
+            </section>
+            <footer class="modal-container-footer">
+                <button1 id="showLinksButton" data-toggle="modal" data-target="#linksModal">
+                    Links
+                </button1>
+            </footer>
+        </article>
+    </div>
+    <div class="modal">
+        <article class="modal-container">
+            <header class="modal-container-header">
+                <span class="modal-container-title">
+                    <svg aria-hidden="true" height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M14 9V4H5v16h6.056c.328.417.724.785 1.18 1.085l1.39.915H3.993A.993.993 0 0 1 3 21.008V2.992C3 2.455 3.449 2 4.002 2h10.995L21 8v1h-7zm-2 2h9v5.949c0 .99-.501 1.916-1.336 2.465L16.5 21.498l-3.164-2.084A2.953 2.953 0 0 1 12 16.95V11zm2 5.949c0 .316.162.614.436.795l2.064 1.36 2.064-1.36a.954.954 0 0 0 .436-.795V13h-5v3.949z" fill="currentColor"></path>
+                    </svg>
+                    SCRAPPER META DATAS
+                </span>
+                <button class="icon-button">
+                    <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z" fill="currentColor"></path>
+                    </svg>
+                </button>
+            </header>
+            <section class="modal-container-body rtf">
+                <ul>
+                    {% for key, value in metadata.items %}
+                    <li><strong>{{ key }}:</strong> {{ value }}</li>
+                {% endfor %}  
+                </ul>
+            </section>
+            <footer class="modal-container-footer">
+                <button1 id="showLinksButton" data-toggle="modal" data-target="#linksModal">
+                    Links
+                </button1>
+            </footer>
+        </article>
+    </div>
+
+
+    
+    
+    
+   
+    <style>
+        
+        .media-container {
+            max-width: 100%; /* Ensure image doesn't exceed container width */
+            height: auto; /* Maintain aspect ratio */
+            object-fit: cover; /* Scale the image to cover the container */
+            display: block; /* Ensure it behaves as a block element */
+            margin: 0 auto; /* Center the image horizontally */
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .modal-container {
+            max-height: 800px;
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            margin-top:150px;
+            flex-direction: column;
+            box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.25);
+        }
+
+        @media (max-width: 600px) {
+            .modal-container {
+                width: 90%;
+            }
+        }
+
+        .modal-container-header {
+            padding: 16px 32px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .modal-container-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            line-height: 1;
+            font-weight: 700;
+            font-size: 1.125;
+        }
+
+        .modal-container-title svg {
+            width: 32px;
+            height: 32px;
+            color: #750550;
+        }
+
+        .modal-container-body {
+            padding: 24px 32px 51px;
+            overflow-y: auto;
+        }
+
+        .rtf h1,
+        .rtf h2,
+        .rtf h3,
+        .rtf h4,
+        .rtf h5,
+        .rtf h6 {
+            font-weight: 700;
+        }
+
+        .rtf h1 {
+            font-size: 1.5rem;
+            line-height: 1.125;
+        }
+
+        .rtf h2 {
+            font-size: 1.25rem;
+            line-height: 1.25;
+        }
+
+        .rtf h3 {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .rtf > * + * {
+            margin-top: 1em;
+        }
+
+        .rtf > * + :is(h1, h2, h3) {
+            margin-top: 2em;
+        }
+
+        .rtf > :is(h1, h2, h3) + * {
+            margin-top: 0.75em;
+        }
+
+        .rtf ul,
+        .rtf ol {
+            margin-left: 20px;
+            list-style-position: inside;
+        }
+
+        .rtf ol {
+            list-style: numeric;
+        }
+
+        .rtf ul {
+            list-style: disc;
+        }
+
+        .modal-container-footer {
+            padding: 20px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            border-top: 1px solid #ddd;
+            gap: 12px;
+            position: relative;
+        }
+
+        .modal-container-footer:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -51px;
+            left: 24px;
+            right: 24px;
+            height: 50px;
+            flex-shrink: 0;
+            background-image: linear-gradient(to top, rgba(255, 255, 255, 0.75), transparent);
+            pointer-events: none;
+        }
+
+       
+        .icon-button {
+            padding: 0;
+            border: 0;
+            background-color: transparent;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.15s ease;
+        }
+
+        .icon-button svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .icon-button:hover, .icon-button:focus {
+            background-color: #dfdad7;
+        }
+        button1 {
+  font-size: 18px;
+  color: #423c3c;
+  font-family: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+}
+
+button1:focus,
+button1:hover {
+  color: #e16666;
+}
+
+button1:focus:after,
+button1:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+button1:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+
+
+</body>
+</html>
+
